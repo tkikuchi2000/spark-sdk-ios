@@ -157,7 +157,10 @@ NS_ASSUME_NONNULL_BEGIN
             _requiresUpdate = YES;
         }
         
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL];
+//        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL];
+        NSURLSessionConfiguration *configuration  = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configuration.timeoutIntervalForResource = 10;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL sessionConfiguration:configuration];
         self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
         if (!self.manager) return nil;

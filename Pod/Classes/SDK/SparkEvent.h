@@ -5,8 +5,12 @@
 //  Created by Ido on 7/14/15.
 //
 //
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
 
 #import <Foundation/Foundation.h>
+
+#pragma clang pop
 
 NS_ASSUME_NONNULL_BEGIN
 
